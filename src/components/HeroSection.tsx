@@ -32,12 +32,12 @@ const HeroSection = ({ onNewsletterOpen, onCallBookingOpen }: HeroSectionProps) 
                 Book a Call
               </Button>
               <Button 
-                variant="outline" 
+                variant="secondary" 
                 size="lg"
                 className="text-lg px-8 py-6 h-auto"
                 onClick={onNewsletterOpen}
               >
-                Subscribe to Newsletter
+                Newsletter
               </Button>
             </div>
           </div>
