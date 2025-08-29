@@ -116,11 +116,11 @@ export const CallBookingPopup = ({ open, onOpenChange }: CallBookingPopupProps) 
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-accent">Book a Call with Cary</DialogTitle>
-          <DialogDescription>
-            Schedule a personalized call with Cary to discuss your goals and next steps. 
-            Fill out your details below.
-          </DialogDescription>
+          <DialogTitle className="text-accent">Schedule a Consultation</DialogTitle>
+            <DialogDescription>
+              Schedule a personalized consultation with Cary to discuss your goals and next steps. 
+              Fill out your details below.
+            </DialogDescription>
         </DialogHeader>
         
         <form onSubmit={handleSubmit} className="space-y-4">

@@ -1,6 +1,10 @@
 import { Button } from "@/components/ui/button";
 
-const AboutAuthor = () => {
+interface AboutAuthorProps {
+  onCallBookingOpen: () => void;
+}
+
+const AboutAuthor = ({ onCallBookingOpen }: AboutAuthorProps) => {
   return (
     <section className="py-24 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -50,7 +54,12 @@ const AboutAuthor = () => {
               </div>
             </div>
             
-            <Button variant="accent" size="lg" className="font-semibold">
+            <Button 
+              variant="accent" 
+              size="lg" 
+              className="font-semibold"
+              onClick={onCallBookingOpen}
+            >
               Schedule a Consultation
             </Button>
           </div>

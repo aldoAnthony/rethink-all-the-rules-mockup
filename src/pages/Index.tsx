@@ -20,8 +20,8 @@ const Index = () => {
       />
       <FeaturedBooks />
       <CoachingTypes />
-      <AboutAuthor />
-      <Testimonials />
+      <AboutAuthor onCallBookingOpen={() => setCallBookingOpen(true)} />
+      <Testimonials onCallBookingOpen={() => setCallBookingOpen(true)} />
       <Footer />
       
       <NewsletterPopup 

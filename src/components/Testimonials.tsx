@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 
 const testimonials = [
@@ -46,7 +47,11 @@ const testimonials = [
   }
 ];
 
-const Testimonials = () => {
+interface TestimonialsProps {
+  onCallBookingOpen: () => void;
+}
+
+const Testimonials = ({ onCallBookingOpen }: TestimonialsProps) => {
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
@@ -89,12 +94,16 @@ const Testimonials = () => {
               Join hundreds of leaders who have already started their transformation journey.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-accent text-accent-foreground px-8 py-3 rounded-md font-semibold hover:bg-accent/90 transition-colors">
+              <Button 
+                variant="accent" 
+                size="lg"
+                onClick={onCallBookingOpen}
+              >
                 Book a Free Consultation
-              </button>
-              <button className="border border-border px-8 py-3 rounded-md font-semibold hover:bg-muted transition-colors">
+              </Button>
+              <Button variant="outline" size="lg">
                 Download Free Guide
-              </button>
+              </Button>
             </div>
           </div>
         </div>
