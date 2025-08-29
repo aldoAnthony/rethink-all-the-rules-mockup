@@ -1,6 +1,11 @@
 import { Button } from "@/components/ui/button";
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  onNewsletterOpen: () => void;
+  onCallBookingOpen: () => void;
+}
+
+const HeroSection = ({ onNewsletterOpen, onCallBookingOpen }: HeroSectionProps) => {
   return (
     <section className="min-h-screen flex items-center justify-center bg-background">
       <div className="container mx-auto px-4 py-20">
@@ -22,15 +27,17 @@ const HeroSection = () => {
                 variant="accent" 
                 size="lg"
                 className="text-lg px-8 py-6 h-auto"
+                onClick={onCallBookingOpen}
               >
-                Start Your Transformation
+                Book a Call
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
                 className="text-lg px-8 py-6 h-auto"
+                onClick={onNewsletterOpen}
               >
-                Explore Books
+                Subscribe to Newsletter
               </Button>
             </div>
           </div>
