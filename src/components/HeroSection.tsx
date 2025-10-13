@@ -22,22 +22,14 @@ const HeroSection = ({ onNewsletterOpen, onCallBookingOpen }: HeroSectionProps) 
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Button 
                 variant="accent" 
                 size="lg"
-                className="text-lg px-8 py-6 h-auto"
+                className="text-lg px-8 py-3 h-auto"
                 onClick={onCallBookingOpen}
               >
                 Book a Call
-              </Button>
-              <Button 
-                variant="secondary" 
-                size="lg"
-                className="text-lg px-8 py-6 h-auto"
-                onClick={onNewsletterOpen}
-              >
-                Newsletter
               </Button>
             </div>
           </div>

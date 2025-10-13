@@ -93,16 +93,13 @@ const Testimonials = ({ onCallBookingOpen }: TestimonialsProps) => {
             <p className="text-muted-foreground mb-6">
               Join hundreds of leaders who have already started their transformation journey.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Button 
                 variant="accent" 
                 size="lg"
                 onClick={onCallBookingOpen}
               >
                 Book a Free Consultation
-              </Button>
-              <Button variant="outline" size="lg">
-                Download Free Guide
               </Button>
             </div>
           </div>

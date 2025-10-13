@@ -76,10 +76,6 @@ const AboutAuthor = ({ onCallBookingOpen }: AboutAuthorProps) => {
                 </div>
               </div>
             </div>
-            
-            <div className="absolute -bottom-4 -right-4 bg-accent text-accent-foreground rounded-lg p-4 shadow-lg">
-              <p className="font-semibold text-sm">"Rethinking rules,<br />transforming lives"</p>
-            </div>
           </div>
         </div>
       </div>
