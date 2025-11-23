@@ -52,7 +52,7 @@ const CoachingTypes = () => {
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">Coaching Services</h2>
+          <h2 className="text-4xl lg:text-5xl font-display font-bold mb-6">Coaching Services</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Choose the coaching approach that aligns with your goals and transformation journey.
           </p>
@@ -61,39 +61,46 @@ const CoachingTypes = () => {
         <div className="grid lg:grid-cols-3 gap-8">
           {coachingTypes.map((coaching, index) => {
             const IconComponent = coaching.icon;
+            const gradients = [
+              'gradient-purple-pink hover-gradient-shift shadow-purple',
+              'gradient-teal-blue hover-gradient-shift shadow-teal',
+              'gradient-orange-yellow hover-gradient-shift shadow-orange'
+            ];
+            const gradient = gradients[index % 3];
+            
             return (
-              <Card key={coaching.id} className="hover-lift border-0 shadow-lg">
+              <Card key={coaching.id} className={`hover-lift border-0 shadow-lg ${gradient} transition-all duration-300`}>
                 <CardContent className="p-8">
                   <div className="text-center mb-6">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-accent/10 rounded-full mb-4">
-                      <IconComponent className="w-8 h-8 text-accent" />
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-4 backdrop-blur-sm">
+                      <IconComponent className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold mb-3">{coaching.title}</h3>
-                    <p className="text-muted-foreground">{coaching.description}</p>
+                    <h3 className="text-2xl font-display font-bold mb-3 text-white">{coaching.title}</h3>
+                    <p className="text-white/90">{coaching.description}</p>
                   </div>
                   
                   <div className="space-y-6">
                     <ul className="space-y-3">
                       {coaching.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-sm">
-                          <div className="w-2 h-2 bg-accent rounded-full mr-3"></div>
+                        <li key={idx} className="flex items-center text-sm text-white/90">
+                          <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
                           {feature}
                         </li>
                       ))}
                     </ul>
                     
-                    <div className="border-t pt-6 space-y-2">
+                    <div className="border-t border-white/20 pt-6 space-y-2">
                       <div className="flex justify-between text-sm">
-                        <span className="text-muted-foreground">Duration:</span>
-                        <span className="font-medium">{coaching.duration}</span>
+                        <span className="text-white/70">Duration:</span>
+                        <span className="font-medium text-white">{coaching.duration}</span>
                       </div>
                       <div className="flex justify-between text-sm">
-                        <span className="text-muted-foreground">Format:</span>
-                        <span className="font-medium">{coaching.format}</span>
+                        <span className="text-white/70">Format:</span>
+                        <span className="font-medium text-white">{coaching.format}</span>
                       </div>
                     </div>
                     
-                    <Button variant="outline" className="w-full font-semibold">
+                    <Button variant="outline" className="w-full font-semibold bg-white/10 border-white/20 text-white hover:bg-white/20 hover:scale-105 transition-all">
                       Learn More
                     </Button>
                   </div>
