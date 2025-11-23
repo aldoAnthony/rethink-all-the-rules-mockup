@@ -56,40 +56,49 @@ const Testimonials = ({ onCallBookingOpen }: TestimonialsProps) => {
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">What Leaders Say</h2>
+          <h2 className="text-4xl lg:text-5xl font-display font-bold mb-6">What Leaders Say</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Hear from executives and professionals who have transformed their approach to leadership and achieved extraordinary results.
           </p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial) => (
-            <Card key={testimonial.id} className="hover-lift border-0 shadow-lg">
-              <CardContent className="p-6">
-                <div className="space-y-4">
-                  <div className="flex space-x-1">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-accent text-accent" />
-                    ))}
+          {testimonials.map((testimonial, index) => {
+            const gradients = [
+              'gradient-purple-pink shadow-purple',
+              'gradient-teal-blue shadow-teal',
+              'gradient-orange-yellow shadow-orange'
+            ];
+            const gradient = gradients[index % 3];
+            
+            return (
+              <Card key={testimonial.id} className={`hover-lift border-0 shadow-lg ${gradient} animate-pulse-glow`}>
+                <CardContent className="p-6">
+                  <div className="space-y-4">
+                    <div className="flex space-x-1">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 fill-yellow text-yellow" />
+                      ))}
+                    </div>
+                    
+                    <p className="text-white/90 leading-relaxed italic">
+                      "{testimonial.content}"
+                    </p>
+                    
+                    <div className="border-t border-white/20 pt-4">
+                      <h4 className="font-bold text-white">{testimonial.name}</h4>
+                      <p className="text-sm text-white/70">{testimonial.role}</p>
+                    </div>
                   </div>
-                  
-                  <p className="text-muted-foreground leading-relaxed italic">
-                    "{testimonial.content}"
-                  </p>
-                  
-                  <div className="border-t pt-4">
-                    <h4 className="font-bold">{testimonial.name}</h4>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
         
         <div className="text-center mt-16">
           <div className="bg-muted/50 rounded-2xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">Ready to Transform Your Leadership?</h3>
+            <h3 className="text-2xl font-display font-bold mb-4">Ready to Transform Your Leadership?</h3>
             <p className="text-muted-foreground mb-6">
               Join hundreds of leaders who have already started their transformation journey.
             </p>

@@ -29,6 +29,21 @@ All colors MUST be HSL.
     --accent: 348 100% 45%;
     --accent-foreground: 0 0% 100%;
 
+    --purple: 270 91% 65%;
+    --purple-foreground: 0 0% 100%;
+    
+    --teal: 173 80% 40%;
+    --teal-foreground: 0 0% 100%;
+    
+    --orange: 25 95% 53%;
+    --orange-foreground: 0 0% 100%;
+    
+    --yellow: 45 93% 47%;
+    --yellow-foreground: 0 0% 0%;
+    
+    --pink: 330 81% 60%;
+    --pink-foreground: 0 0% 100%;
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
@@ -106,7 +121,42 @@ All colors MUST be HSL.
 
 @layer utilities {
   .hero-gradient {
-    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+    background: linear-gradient(135deg, hsl(var(--purple)) 0%, hsl(var(--pink)) 100%);
+  }
+  
+  .gradient-purple-pink {
+    background: linear-gradient(135deg, hsl(var(--purple)) 0%, hsl(var(--pink)) 100%);
+  }
+  
+  .gradient-teal-blue {
+    background: linear-gradient(135deg, hsl(var(--teal)) 0%, hsl(var(--primary)) 100%);
+  }
+  
+  .gradient-orange-yellow {
+    background: linear-gradient(135deg, hsl(var(--orange)) 0%, hsl(var(--yellow)) 100%);
+  }
+  
+  .gradient-text-purple-teal {
+    background: linear-gradient(135deg, hsl(var(--purple)), hsl(var(--teal)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .shadow-purple {
+    box-shadow: 0 10px 40px -10px hsl(var(--purple) / 0.4);
+  }
+  
+  .shadow-teal {
+    box-shadow: 0 10px 40px -10px hsl(var(--teal) / 0.4);
+  }
+  
+  .shadow-orange {
+    box-shadow: 0 10px 40px -10px hsl(var(--orange) / 0.4);
+  }
+  
+  .shadow-pink {
+    box-shadow: 0 10px 40px -10px hsl(var(--pink) / 0.4);
   }
   
   .animate-fade-in-up {
@@ -121,6 +171,19 @@ All colors MUST be HSL.
     animation: fade-in-up 0.6s ease-out 0.2s forwards;
   }
   
+  .animate-bounce-in {
+    animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  .animate-gradient-shift {
+    animation: gradient-shift 3s ease infinite;
+    background-size: 200% 200%;
+  }
+  
   .hover-lift {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
@@ -129,11 +192,58 @@ All colors MUST be HSL.
     transform: translateY(-4px);
     box-shadow: 0 10px 25px -3px hsl(var(--foreground) / 0.1);
   }
+  
+  .hover-gradient-shift {
+    transition: all 0.3s ease;
+    background-size: 200% 200%;
+  }
+  
+  .hover-gradient-shift:hover {
+    background-position: right center;
+  }
 }
 
 @keyframes fade-in-up {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--purple) / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--pink) / 0.6);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }

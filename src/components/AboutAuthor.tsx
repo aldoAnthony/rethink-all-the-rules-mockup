@@ -11,7 +11,7 @@ const AboutAuthor = ({ onCallBookingOpen }: AboutAuthorProps) => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
             <div>
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6">About the Author</h2>
+              <h2 className="text-4xl lg:text-5xl font-display font-bold mb-6">About the Author</h2>
               <div className="w-20 h-1 bg-accent mb-8"></div>
             </div>
             
@@ -36,21 +36,21 @@ const AboutAuthor = ({ onCallBookingOpen }: AboutAuthorProps) => {
             </div>
             
             <div className="grid sm:grid-cols-2 gap-8 pt-8">
-              <div>
-                <h4 className="font-bold text-2xl text-accent mb-2">500+</h4>
-                <p className="text-muted-foreground">Leaders Coached</p>
+              <div className="gradient-purple-pink p-6 rounded-xl hover-gradient-shift hover:scale-105 transition-all duration-300 shadow-purple">
+                <h4 className="font-bold text-2xl text-white mb-2">500+</h4>
+                <p className="text-white/80">Leaders Coached</p>
               </div>
-              <div>
-                <h4 className="font-bold text-2xl text-accent mb-2">15+</h4>
-                <p className="text-muted-foreground">Years Experience</p>
+              <div className="gradient-teal-blue p-6 rounded-xl hover-gradient-shift hover:scale-105 transition-all duration-300 shadow-teal">
+                <h4 className="font-bold text-2xl text-white mb-2">15+</h4>
+                <p className="text-white/80">Years Experience</p>
               </div>
-              <div>
-                <h4 className="font-bold text-2xl text-accent mb-2">3</h4>
-                <p className="text-muted-foreground">Published Books</p>
+              <div className="gradient-orange-yellow p-6 rounded-xl hover-gradient-shift hover:scale-105 transition-all duration-300 shadow-orange">
+                <h4 className="font-bold text-2xl text-foreground mb-2">3</h4>
+                <p className="text-foreground/80">Published Books</p>
               </div>
-              <div>
-                <h4 className="font-bold text-2xl text-accent mb-2">50+</h4>
-                <p className="text-muted-foreground">Companies Transformed</p>
+              <div className="bg-pink text-white p-6 rounded-xl hover:scale-105 transition-all duration-300 shadow-pink">
+                <h4 className="font-bold text-2xl mb-2">50+</h4>
+                <p className="text-white/80">Companies Transformed</p>
               </div>
             </div>
             
